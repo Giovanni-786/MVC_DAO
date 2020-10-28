@@ -3,6 +3,7 @@ package view;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
 import model.ClienteModel;
+import model.EnderecoModel;
 
 public class ClienteTableModel extends AbstractTableModel {
 
@@ -54,7 +55,7 @@ public class ClienteTableModel extends AbstractTableModel {
     }
 
     //Adicionamos várias linhas na tabela de uma vez, recebendo um List de ClienteModel
-    public void addLista(ArrayList<ClienteModel> cliente) {
+    public void addLista(ArrayList<ClienteModel> cliente    ) {
         int tamanhoAntigo = getRowCount();
 
         //Adiciona os usuários
@@ -63,4 +64,7 @@ public class ClienteTableModel extends AbstractTableModel {
         //Aqui reportamos a mudança para o JTable, assim ele pode se redesenhar, para visualizarmos a alteração
         fireTableRowsInserted(tamanhoAntigo, getRowCount() - 1);
     }
+    
+    
+    
 }

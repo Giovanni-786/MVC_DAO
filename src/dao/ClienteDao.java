@@ -17,15 +17,19 @@ public class ClienteDao {
     }
 
     public void adicionar(ClienteModel cliente) throws SQLException {
-        String sql = "INSERT INTO CLIENTE (CLI_NOME, CLI_CPF, CLI_EMAIL, CLI_DDD, CLI_TELEFONE)"
+        String sql = "INSERT INTO CLIENTE (CLI_NOME, CLI_CPF, CLI_EMAIL, CLI_DDD, CLI_TELEFONE)" 
                 + " VALUES ( ?, ?, ?, ?, ?)";
+                
+                        
         PreparedStatement stm = conexao.prepareStatement(sql);
  
         stm.setString(1, cliente.getCLI_NOME());
         stm.setString(2, cliente.getCLI_CPF());
         stm.setString(3, cliente.getCLI_EMAIL());
-        stm.setString(4, cliente.getCLI_DDD());
-        stm.setString(5, cliente.getCLI_TELEFONE());
+        stm.setInt(4, cliente.getCLI_DDD());
+        stm.setInt(5, cliente.getCLI_TELEFONE());
+        
+
         stm.execute();
         stm.close();
     }
@@ -37,8 +41,8 @@ public class ClienteDao {
         stm.setString(1, cliente.getCLI_NOME());
         stm.setString(2, cliente.getCLI_CPF());
         stm.setString(3, cliente.getCLI_EMAIL());
-        stm.setString(4, cliente.getCLI_DDD());
-        stm.setString(5, cliente.getCLI_TELEFONE());
+        stm.setInt(4, cliente.getCLI_DDD());
+        stm.setInt(5, cliente.getCLI_TELEFONE());
         stm.execute();
         stm.close();
     }
@@ -66,11 +70,12 @@ public class ClienteDao {
         while (rs.next()) {
             ClienteModel objusu = new ClienteModel();
             objusu.setCLI_ID(rs.getInt("CLI_ID"));
+            objusu.setCLI_NOME(rs.getString("END_ID"));
             objusu.setCLI_NOME(rs.getString("CLI_NOME"));
             objusu.setCLI_CPF(rs.getString("CLI_CPF"));
             objusu.setCLI_EMAIL(rs.getString("CLI_EMAIL"));
-            objusu.setCLI_DDD(rs.getString("CLI_DDD"));
-            objusu.setCLI_TELEFONE(rs.getString("CLI_TELEFONE"));
+            objusu.setCLI_DDD(rs.getInt("CLI_DDD"));
+            objusu.setCLI_TELEFONE(rs.getInt("CLI_TELEFONE"));
             lista.add(objusu);
         }
         rs.close();

@@ -6,10 +6,10 @@ package model;
 public class EnderecoModel {
     private int END_ID;
     private String END_RUA;
-    private int END_NUMERO;
+    private String END_NUMERO;
     private String END_CIDADE;
     private String END_ESTADO;
-    private int END_CEP;
+    private String END_CEP;
     
     
    
@@ -17,7 +17,7 @@ public class EnderecoModel {
     public EnderecoModel() {
     }
 
-    public EnderecoModel(int END_ID, String END_RUA, int END_NUMERO, String END_CIDADE, String END_ESTADO, int END_CEP) {
+    public EnderecoModel(int END_ID, String END_RUA, String END_NUMERO, String END_CIDADE, String END_ESTADO, String END_CEP) {
         this.END_ID = END_ID;
         this.END_RUA = END_RUA;
         this.END_NUMERO = END_NUMERO;
@@ -58,14 +58,14 @@ public class EnderecoModel {
     /**
      * @return the END_NUMERO
      */
-    public int getEND_NUMERO() {
+    public String getEND_NUMERO() {
         return END_NUMERO;
     }
 
     /**
      * @param END_NUMERO the END_NUMERO to set
      */
-    public void setEND_NUMERO(int END_NUMERO) {
+    public void setEND_NUMERO(String END_NUMERO) {
         this.END_NUMERO = END_NUMERO;
     }
 
@@ -100,14 +100,14 @@ public class EnderecoModel {
     /**
      * @return the END_CEP
      */
-    public int getEND_CEP() {
+    public String getEND_CEP() {
         return END_CEP;
     }
 
     /**
      * @param END_CEP the END_CEP to set
      */
-    public void setEND_CEP(int END_CEP) {
+    public void setEND_CEP(String END_CEP) {
         this.END_CEP = END_CEP;
     }
  

@@ -1,33 +1,37 @@
 package model;
 
 
-public class ClienteModel extends EnderecoModel {
+public class ClienteModel {
     private int CLI_ID;
     private String CLI_NOME;
     private String CLI_CPF;
     private String CLI_EMAIL;
-    private String CLI_DDD;
-    private String CLI_TELEFONE;
+    private int CLI_DDD;
+    private int CLI_TELEFONE;
+    private int END_ID;
     
     
    
 
     public ClienteModel() {
+        
+        EnderecoModel endereco = new EnderecoModel();
+        endereco.setEND_ID(END_ID);
     }
     
-    public class EnderecoModel{
-        EnderecoModel endereco = new EnderecoModel();
-    }
     
    
-    public ClienteModel(int CLI_ID, String CLI_NOME, String CLI_CPF, String CLI_EMAIL, String CLI_DDD, String CLI_TELEFONE) {
+    
+   
+    public ClienteModel(int CLI_ID, String CLI_NOME, String CLI_CPF, String CLI_EMAIL, int CLI_DDD, int CLI_TELEFONE) {
         this.CLI_ID = CLI_ID;
         this.CLI_NOME = CLI_NOME;
         this.CLI_CPF = CLI_CPF;
         this.CLI_EMAIL = CLI_EMAIL;
         this.CLI_DDD = CLI_DDD;
         this.CLI_TELEFONE = CLI_TELEFONE;
-        
+        this.END_ID = END_ID;
+     
         
     }
 
@@ -90,30 +94,45 @@ public class ClienteModel extends EnderecoModel {
     /**
      * @return the CLI_DDD
      */
-    public String getCLI_DDD() {
+    public int getCLI_DDD() {
         return CLI_DDD;
     }
 
     /**
      * @param CLI_DDD the CLI_DDD to set
      */
-    public void setCLI_DDD(String CLI_DDD) {
+    public void setCLI_DDD(int CLI_DDD) {
         this.CLI_DDD = CLI_DDD;
     }
 
     /**
      * @return the CLI_TELEFONE
      */
-    public String getCLI_TELEFONE() {
+    public int getCLI_TELEFONE() {
         return CLI_TELEFONE;
     }
 
     /**
      * @param CLI_TELEFONE the CLI_TELEFONE to set
      */
-    public void setCLI_TELEFONE(String CLI_TELEFONE) {
+    public void setCLI_TELEFONE(int CLI_TELEFONE) {
         this.CLI_TELEFONE = CLI_TELEFONE;
     }
 
+    /**
+     * @return the END_ID
+     */
+    public int getEND_ID() {
+        return END_ID;
+    }
+
+    /**
+     * @param END_ID the END_ID to set
+     */
+    public void setEND_ID(int END_ID) {
+        this.END_ID = END_ID;
+    }
+
+  
 
 }
